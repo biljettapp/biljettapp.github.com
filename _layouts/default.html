@@ -1,0 +1,59 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="sv"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="sv" xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="sv" xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
+<!--[if gt IE 8]> <!--> <html class="no-js" lang="sv"> <!--<![endif]-->
+    <head>
+        <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{{ page.title }}</title>
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+
+        <meta name="robots" content="noindex" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1" />
+
+        <meta property="fb:admins" content="{{ site.facebook.admins }}"/>
+        <meta property="fb:app_id" content="{{ site.facebook.app }}" />
+        <meta property="og:title" content="{{ page.title }}" />
+        {% if page.description %}
+            <meta property="og:description" content="{{ page.description }}" />
+        {% endif %}
+        {% if page.image %}
+            <meta property="og:image" content="{{ site.url }}/images/{{ page.image }}" />
+        {% endif %}
+        <meta property="og:url" content="{{ site.url }}{% unless page.url == '/index.html' %}{{ page.url }}{% endunless %}" />
+        <meta property="og:site_name" content="{{ site.title }}" />
+
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/css/style.css" media="all" />
+        <link rel="stylesheet" href="/css/print.css" media="print" />
+
+        <!--[if lt IE 9]>
+            <script src="/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <header role="banner">
+            <div class="content">
+                {% unless page.url == '/index.html' %}
+                    <a href="/" title="Om Biljettapp" role="navigation">Om</a>
+                {% endunless %}
+                <a href="/">Biljettapp</a> för en smartare tågresa
+            </div>
+        </header>
+
+        {{ content }}
+
+        <footer role="contentinfo">
+            <div class="content">
+                &copy; Biljettapp
+            </div>
+        </footer>
+
+    </body>
+</html>
