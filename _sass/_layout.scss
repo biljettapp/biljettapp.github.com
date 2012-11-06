@@ -37,7 +37,7 @@ html {
     }
 
     .quotes {
-        padding-top: 1em;
+        padding: 1em 0;
         margin-right: 400px;
 
         @include respond-to(mobile) {
