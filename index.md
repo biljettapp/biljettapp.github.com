@@ -14,6 +14,8 @@ __Det är {{ 'now' | date: "%Y" }} och resenärer förtjänar något bättre. L�
 
 Skicka vidare din SMS-biljett till [076-686 21 79](sms:+46766862179).
 
+<small>Genom att använda tjänsten accepterar du vår korta <a href="/integritetspolicy/">integritetspolicy</a>.</small>
+
 ### 2. Öppna länken du får i retur
 
 Vi omvandlar din SMS-biljett till en biljett för [Passbook](/passbook/). När du lagt till biljetten håller vi dig uppdaterad med eventuella förändringar på din resa.

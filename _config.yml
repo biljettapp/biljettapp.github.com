@@ -16,6 +16,8 @@ auto: true
 server: true
 
 sitemap:
-    include: ["/index.html"]
+    include: ["/index.html",
+        "/integritetspolicy/index.html",
+        "/passbook/index.html"]
 
 exclude: ["README.md", "config.rb"]
