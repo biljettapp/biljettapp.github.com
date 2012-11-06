@@ -9,5 +9,5 @@ asd
 
 ## Krav för Passbook
 
-* iOS 6
 * iPhone eller iPod touch
+* iOS 6

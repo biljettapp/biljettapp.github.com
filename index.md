@@ -1,16 +1,19 @@
 ---
 layout: front
 title: Biljettapp för en smartare tågresa
+description: Det är 2012 och resenärer förtjänar något bättre. Låt en smartare biljett vara dig till hands på din resa.
 ---
 
 # En smartare tågresa
 
-Det är 2012 och resenärer förtjänar något bättre.
+__Det är {{ 'now' | date: "%Y" }} och resenärer förtjänar något bättre. Låt en smartare biljett vara dig till hands på din resa.__
 
-## 1. Vidarebefordra din information
+## Kom igång snabbt
 
-Skicka din SMS-biljett till 073-012 10 96 för att aktivera bevakningen.
+### 1. Vidarebefordra din biljett
 
-## 2. Håll dig uppdaterad
+Skicka vidare din SMS-biljett till [076-686 21 79](sms:+46766862179).
 
-Få uppdateringar i realtid om din resa. Oavsett om ditt tåg är inställt, försenat eller har bytt spår.
+### 2. Öppna länken du får i retur
+
+Vi omvandlar din SMS-biljett till en biljett för [Passbook](/passbook/). När du lagt till biljetten håller vi dig uppdaterad med eventuella förändringar på din resa.

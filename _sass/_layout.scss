@@ -18,6 +18,16 @@ html {
         padding: 0;
     }
 
+    .inner {
+        background: url('../images/iphone.png') top right no-repeat;
+        min-height: 363px;
+
+        @include respond-to(mobile) {
+            min-height: 0;
+            background: none;
+        }
+    }
+
     ul {
         list-style: circle;
     }
@@ -25,11 +35,33 @@ html {
     h2 {
         color: #fff;
     }
+
+    .quotes {
+        padding-top: 1em;
+        margin-right: 400px;
+
+        @include respond-to(mobile) {
+            margin: 0;
+        }
+    }
+
+    blockquote {
+        color: #eee;
+
+        &:before,
+        cite {
+            color: #999;
+        }
+    }
 }
 
 [role=banner],
 [role=contentinfo] {
     color: #ccc;
+}
+
+[role=contentinfo] span {
+    color: #888;
 }
 
 .content {
