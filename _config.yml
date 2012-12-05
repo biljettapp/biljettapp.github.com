@@ -1,6 +1,6 @@
-url: http://biljettapp.github.com
-title: Biljettapp hjälper dig på resan
-description: När du åker tåg och vill ha bättre koll på läget.
+url: http://biljettapp.se
+title: Biljettapp är till för dig som resenär
+description: Håll järnkoll på din tågresa med en smart biljett i mobilen.
 language: sv-se
 
 author: Erik Eng
@@ -8,6 +8,9 @@ email: hej@biljettapp.se
 github: biljettapp
 twitter: biljettapp
 facebook: biljettapp
+
+analytics:
+    profile: 36843230
 
 permalink: /blogg/:title/
 

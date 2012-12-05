@@ -1,21 +1,17 @@
 ---
 layout: front
-title: Biljettapp för en smartare tågresa
-description: Det är 2012 och resenärer förtjänar något bättre. Låt en smartare biljett vara dig till hands på din resa.
+title: Biljettapp är till för dig som resenär
+description: Håll järnkoll på din tågresa med en smart biljett i mobilen.
 ---
 
-# En smartare tågresa
+# Biljettapp är till för dig som resenär
 
-__Det är {{ 'now' | date: "%Y" }} och resenärer förtjänar något bättre. Låt en smartare biljett vara dig till hands på din resa.__
+Tjänsten håller koll på ditt tåg och information som är relevant för din resa. Exempelvis aktuellt avgångsspår och eventuella förseningar.
 
-## Kom igång snabbt
+## Biljettapp är inte SJ
 
-### 1. Vidarebefordra din biljett
+Johan och Erik som utvecklar Biljettapp helt oberoende av tågoperatörer (som SJ eller Norrtåg) samt aktörer som Trafikverket. Skriv gärna till oss på [Twitter](https://twitter.com/{{ site.twitter }}) eller skicka ett mejl till [hej@biljettapp.se](mailto:hej@biljettapp.se).
 
-Skicka vidare din SMS-biljett till [076-686 21 79](sms:+46766862179).
+## Passbook är bara början
 
-<small>Genom att använda tjänsten accepterar du vår korta <a href="/integritetspolicy/">integritetspolicy</a>.</small>
-
-### 2. Öppna länken du får i retur
-
-Vi omvandlar din SMS-biljett till en biljett för [Passbook](/passbook/). När du lagt till biljetten håller vi dig uppdaterad med eventuella förändringar på din resa.
+Under vintern förbättrar vi tjänsten och bygger appar för Android &amp; iOS.

@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Passbook med dina tågbiljetter
+title: Dina tågbiljetter i Passbook
 ---
 
-# Passbook med dina tågbiljetter
+# Dina tågbiljetter i Passbook
 
-asd
+Med Biljettapp kan du enkelt hålla koll på din tågresa direkt i Passbook.
 
 ## Krav för Passbook
 

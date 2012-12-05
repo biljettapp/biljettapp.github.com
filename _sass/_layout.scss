@@ -13,6 +13,7 @@ html {
     background: #272727;
     border-bottom: 1px solid #000;
     border-top: 1px solid #333;
+    color: #ddd;
 
     .content {
         padding: 0;
@@ -28,29 +29,30 @@ html {
         }
     }
 
-    ul {
-        list-style: circle;
+    ol {
+        font-size: 1.2em;
     }
 
-    h2 {
+    a {
+        white-space: nowrap;
+    }
+
+    h2,
+    strong {
         color: #fff;
     }
 
-    .quotes {
-        padding: 1em 0;
+    small {
+        color: #bbb;
+    }
+
+    p,
+    li {
         margin-right: 400px;
+        padding:.3em 0;
 
         @include respond-to(mobile) {
             margin: 0;
-        }
-    }
-
-    blockquote {
-        color: #eee;
-
-        &:before,
-        cite {
-            color: #999;
         }
     }
 }
