@@ -21,20 +21,12 @@ html {
 
     .inner {
         background: url('../images/iphone.png') top right no-repeat;
-        min-height: 363px;
+        min-height: 312px;
 
         @include respond-to(mobile) {
             min-height: 0;
             background: none;
         }
-    }
-
-    ol {
-        font-size: 1.2em;
-    }
-
-    a {
-        white-space: nowrap;
     }
 
     h2,
@@ -46,8 +38,7 @@ html {
         color: #bbb;
     }
 
-    p,
-    li {
+    p {
         margin-right: 400px;
         padding:.3em 0;
 
@@ -70,6 +61,18 @@ html {
     max-width: 55em;
     margin: 0 auto;
     padding: 1em 2em;
+}
+
+.steps {
+    font-size: 1.2em;
+
+    a {
+        white-space: nowrap;
+    }
+
+    li {
+        margin: .5em 0;
+    }
 }
 
 .inner {
