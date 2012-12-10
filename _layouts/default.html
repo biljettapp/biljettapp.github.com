@@ -45,14 +45,14 @@
     </head>
     <body>
 
+        {% unless page.url == '/index.html' %}
         <header role="banner">
             <div class="content">
-                {% unless page.url == '/index.html' %}
-                    <a href="/" title="Om Biljettapp" role="navigation">Om</a>
-                {% endunless %}
-                <a href="/">Biljettapp</a> för en smartare tågresa
+                <a href="/" title="Om Biljettapp" role="navigation">Om</a>
+                <a href="/">Biljettapp</a>, en smartare tågresa
             </div>
         </header>
+        {% endunless %}
 
         {{ content }}
 
