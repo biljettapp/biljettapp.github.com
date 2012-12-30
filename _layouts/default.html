@@ -69,6 +69,12 @@
             var test = document.getElementById('test');
             if(test && navigator.userAgent.match(/iPhone OS 6/)) {
                 test.style.display = '';
+                if(!navigator.userAgent.match(/Safari/)) {
+                    test.href = '#';
+                    test.removeAttribute('class');
+                    test.removeAttribute('onclick');
+                    test.innerHTML = '<strong>Öppna i Safari för att testa.</strong>';
+                }
             }
         </script>
     </body>
