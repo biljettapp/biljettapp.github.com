@@ -67,8 +67,11 @@
 
         <script>
             var test = document.getElementById('test');
-            if(test && navigator.userAgent.match(/iPhone OS 6/)) {
-                test.style.display = '';
+            if(test &&
+                (navigator.userAgent.match(/iPhone OS 6/) || navigator.userAgent.match(/OS X 10_8_2/))) {
+                if(!navigator.userAgent.match(/Chrome/)) {
+                    test.style.display = '';
+                }
                 if(!navigator.userAgent.match(/Safari/)) {
                     test.href = '#';
                     test.removeAttribute('class');
