@@ -23,6 +23,11 @@ html {
         background: url('../images/iphone.png') top right no-repeat;
         min-height: 312px;
 
+        @include respond-to(retina) {
+            background-image: url('../images/iphone@2x.png');
+            background-size: 406px 382px;
+        }
+
         @include respond-to(mobile) {
             min-height: 0;
             background: none;
