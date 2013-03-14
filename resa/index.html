@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Resa med tåg #…</title>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { height: 500px; background: #eee; }
+
+        .d3-vec { position:absolute; }
+        path {
+            fill-opacity: 0;
+            stroke: #fff;
+            stroke-width: 5px;
+        }
+
+        .marker {
+            width: 48px;
+            height: 48px;
+            margin-left: -24px;
+            margin-top: -24px;
+            pointer-events: all;
+            position: absolute;
+            background: rgba(0, 0, 0, .15) url('/images/marker.png') center center no-repeat;
+            background-size: 12px 12px;
+            border-radius: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tåg #<span>…</span></h1>
+<div id='map'></div>
+<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
+<script src='http://d3js.org/d3.v2.min.js'></script>
+<script>
+    // TODO: Marker movement http://mapbox.com/mapbox.js/example/marker-movement/
+
+    function d3layer() {
+        var f = {}, bounds, feature, collection;
+        var div = d3.select(document.body)
+            .append("div")
+            .attr('class', 'd3-vec'),
+            svg = div.append('svg'),
+            g = svg.append("g");
+
+        f.parent = div.node();
+
+        f.project = function(x) {
+          var point = f.map.locationPoint({ lat: x[1], lon: x[0] });
+          return [point.x, point.y];
+        };
+
+        var first = true;
+        f.draw = function() {
+          first && svg.attr("width", f.map.dimensions.x)
+              .attr("height", f.map.dimensions.y)
+              .style("margin-left", "0px")
+              .style("margin-top", "0px") && (first = false);
+
+          path = d3.geo.path().projection(f.project);
+          feature.attr("d", path);
+        };
+
+        f.data = function(x) {
+            collection = x;
+            bounds = d3.geo.bounds(collection);
+            feature = g.selectAll("path")
+                .data(collection.features)
+                .enter().append("path");
+            return f;
+        };
+
+        f.extent = function() {
+            return new MM.Extent(
+                new MM.Location(bounds[0][1], bounds[0][0]),
+                new MM.Location(bounds[1][1], bounds[1][0]));
+        };
+        return f;
+    }
+    var new_jersey = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": "34",
+            "properties": {
+                "name": "New Jersey"
+            },
+            "geometry": {
+                "type": "MultiLineString",
+                "coordinates": [
+                    [ // First line
+                        [15.425472111142446, 60.48294376182783],
+                        [15.496910779090088, 60.44177141954133],
+                        [15.594716965622682, 60.401369783354916],
+                        [15.757078738258567, 60.34659008490676],
+                        [15.862408402486986, 60.29659849006066],
+                        [15.980235478406719, 60.274104982091394],
+                        [16.056387961223802, 60.19112326086717],
+                        [16.170606924120058, 60.14729366448533],
+                        [16.216147837125018, 60.12953387441543],
+                        [16.354052276959305, 60.06858374322249],
+                        [16.481882436774004, 59.98691648543424],
+                        [16.60451662593435, 59.92569604031407],
+                        [16.744076525203123, 59.937665535869186],
+                        [16.853164746453633, 59.94043512880883],
+                        [16.961361786593468, 59.93290642055962],
+                        [17.2031204322516, 59.88502846659738],
+                        [17.428941528362824, 59.861356961797576],
+                        [17.612216432964303, 59.8671551608768],
+                        [17.64869380081809, 59.85788233145857],
+                        [17.702637213904463, 59.82906878227122],
+                        [17.755314034471667, 59.7769430404325],
+                        [17.787099195761126, 59.72540953024057],
+                        [17.807702632434935, 59.69401726244286],
+                        [17.927922416000683, 59.64908542342332],
+                        [17.923106635580957, 59.63271355681932],
+                        [17.907555568638383, 59.607603844268944],
+                        [17.895877578780283, 59.55061640571435],
+                        [17.89923385990216, 59.520485589065174],
+                        [17.915298246870986, 59.475514870078314],
+                        [17.92435659824109, 59.459362830942744],
+                        [17.933708216489876, 59.4432303733449],
+                        [17.949147244762653, 59.42784025794607],
+                        [17.956751364455883, 59.41756810778021],
+                        [17.96311988187483, 59.40853660102594],
+                        [18.001290571581155, 59.37977126618761],
+                        [18.01033000758489, 59.365526570659895],
+                        [18.02841093057981, 59.34026987202791],
+                        [18.057267005394753, 59.32997147954564]
+                    ]/*,
+                    [ // Second line
+                        [
+                            -70.205966,
+                            40.691721
+                        ],
+                        [
+                            -71.805966,
+                            46
+                        ],
+                        [
+                            -73.052611,
+                            40.866983
+                        ]
+                    ]*/
+                ]
+            }
+        }
+    ]
+};
+
+    var map = mapbox.map('map');
+    if(retina = window.devicePixelRatio >= 2) {
+        map.tileSize = { x: 128, y: 128 };
+        map.addLayer(mapbox.layer().id('ptz0n.biljettapp-retina'));
+    } else {
+        map.addLayer(mapbox.layer().id('ptz0n.biljettapp'));
+    }
+    map.ui['zoomer'].add();
+    map.setZoomRange(6, 9);
+
+    // Create an empty markers layer
+    var markerLayer = mapbox.markers.layer();
+
+    l = d3layer().data(new_jersey);
+    map.addLayer(l);
+    map.extent(l.extent());
+
+    // Add interaction to this marker layer. This
+    // binds tooltips to each marker that has title
+    // and description defined.
+    mapbox.markers.interaction(markerLayer);
+    map.addLayer(markerLayer);
+
+    // Add a single feature to the markers layer.
+    // You can use .features() to add multiple features.
+    markerLayer.add_feature({
+      geometry: {
+          // The order of coordinates here is lon, lat. This is because
+          // we use the GeoJSON specification for all marker features.
+          // (lon, lat is also the internal order of KML and other geographic formats)
+          coordinates: [17.612216432964303, 59.8671551608768]
+      },
+      properties: {}
+    }).factory(function(f) {
+    // Define a new factory function. This takes a GeoJSON object
+    // as its input and returns an element - in this case an image -
+    // that represents the point.
+        var div = document.createElement('div');
+        div.className = 'marker';
+        return div;
+    });
+</script>
+</body>
+</html>
