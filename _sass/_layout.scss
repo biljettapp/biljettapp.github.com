@@ -118,6 +118,30 @@ html {
     }
 }
 
+.operators {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+
+    img {
+        margin: 1em;
+        width: 64px;
+        height: 64px;
+        @include transition-property(opacity);
+        @include transition-duration(.3s);
+        @include opacity(0.7);
+
+        @include respond-to(mobile) {
+            width: 46px;
+            height: 46px;
+        }
+    }
+
+    &:hover img {
+        @include opacity(1);
+    }
+}
+
 /* COMMENTS ---------------------------------------------------------------------- */
 
 .fb_iframe_widget,

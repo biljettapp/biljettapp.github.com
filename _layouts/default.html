@@ -52,7 +52,7 @@
         <header role="banner">
             <div class="content">
                 <a href="/" title="Om Biljettapp" role="navigation">Om</a>
-                <a href="/">Biljettapp</a>, en smartare tågresa
+                <a href="/">Biljettapp</a>, din tågbiljett
             </div>
         </header>
         {% endunless %}
@@ -65,6 +65,7 @@
             </div>
         </footer>
 
+        <script src="/js/jquery.js"></script>
         <script>
             var test = document.getElementById('test');
             if(test &&
@@ -79,6 +80,38 @@
                     test.innerHTML = '<strong>Öppna i Safari för att testa.</strong>';
                 }
             }
+
+            $(document).ready( function () {
+                var form = $('#subscribe');
+
+                if(form.length > 0) {
+                    $('#submitEmail').bind('click', function (e) {
+                        if(e) e.preventDefault();
+                        var button = $(this);
+                        button.attr('disabled', 'disabled').attr('value', 'Sparar…');
+                        $.ajax({
+                            type: form.attr('method'),
+                            url: form.attr('action'),
+                            data: form.serialize(),
+                            cache: false,
+                            dataType: 'json',
+                            contentType: 'application/json; charset=utf-8',
+                            error: function(err) {
+                                alert("Det där gick inte så bra, försök gärna igen.");
+                            },
+                            success: function(data) {
+                                if (data.result != "success") {
+                                    alert('Vänligen kontrollera din e-postadress');
+                                    button.removeAttr('disabled').attr('value', 'Försök igen');
+                                } else {
+                                    form.remove();
+                                    $('.subscribe-notice').html('<strong>Kul att du vill vara med!</strong> Ett meddelande har skickats till dig för att bekräfta. <em>– Vi hörs snart igen</em>');
+                                }
+                            }
+                        });
+                    });
+                }
+            });
         </script>
     </body>
 </html>

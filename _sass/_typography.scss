@@ -19,6 +19,18 @@ time {
     margin-bottom: 1em;
 }
 
+hr {
+    clear: both;
+    height: 2px;
+    border: 0;
+    margin: 2em 0;
+    width: 100%;
+    background: #ccc;
+    @include background(linear-gradient(left, rgba(217, 217, 217, .2),
+        rgba(217, 217, 217, 1) 50%,
+        rgba(217, 217, 217, 0)));
+}
+
 /* LISTS ------------------------------------------------------------------------- */
 
 ul,

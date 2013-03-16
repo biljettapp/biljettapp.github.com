@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Resa med tåg #…</title>
+    <meta name="robots" content="noindex">
+    <title>Resa med tåg #673</title>
     <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
@@ -29,7 +30,7 @@
     </style>
 </head>
 <body>
-    <h1>Tåg #<span>…</span></h1>
+    <h1>Tåg #<span>673</span></h1>
 <div id='map'></div>
 <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
 <script src='http://d3js.org/d3.v2.min.js'></script>
@@ -78,14 +79,14 @@
         };
         return f;
     }
-    var new_jersey = {
+    var route = {
     "type": "FeatureCollection",
     "features": [
         {
             "type": "Feature",
             "id": "34",
             "properties": {
-                "name": "New Jersey"
+                "name": "Route"
             },
             "geometry": {
                 "type": "MultiLineString",
@@ -163,7 +164,7 @@
     // Create an empty markers layer
     var markerLayer = mapbox.markers.layer();
 
-    l = d3layer().data(new_jersey);
+    l = d3layer().data(route);
     map.addLayer(l);
     map.extent(l.extent());
 
