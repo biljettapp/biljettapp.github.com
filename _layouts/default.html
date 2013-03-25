@@ -105,6 +105,7 @@
                                     button.removeAttr('disabled').attr('value', 'Försök igen');
                                 } else {
                                     form.remove();
+                                    _gaq.push(['_trackEvent', 'Subscription', 'Email', 'Beta']);
                                     $('.subscribe-notice').html('<strong>Kul att du vill vara med!</strong> Ett meddelande har skickats till dig för att bekräfta. <em>– Vi hörs snart igen</em>');
                                 }
                             }
