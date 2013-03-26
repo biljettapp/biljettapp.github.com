@@ -159,3 +159,13 @@ html {
         margin: 0 -2em;
     }
 }
+
+/* TWEETS ------------------------------------------------------------------------ */
+
+.twitter-tweet {
+    margin: 1em auto !important;
+
+    @include respond-to(mobile) {
+        margin: 1em 0 !important;
+    }
+}
