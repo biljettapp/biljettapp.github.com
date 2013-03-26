@@ -64,17 +64,48 @@ h4 {
 
 /* BUTTONS ----------------------------------------------------------------------- */
 
-button,
-.button {
-    background: #555;
-    background: rgba(0, 0, 0, .2);
-    color: #fff;
-    padding: .5em .8em;
-    border: 2px solid #ccc !important;
-    border-color: rgba(255, 255, 255, .6) !important;
-    @include border-radius(5px);
-    @include inline-block;
-    font-weight: 700;
+.about {
+
+    button,
+    .button {
+        background: #555;
+        background: rgba(0, 0, 0, .2);
+        color: #fff;
+        padding: .5em .8em;
+        border: 2px solid #ccc !important;
+        border-color: rgba(255, 255, 255, .6) !important;
+        @include border-radius(5px);
+        @include inline-block;
+        font-weight: 700;
+
+        &:hover,
+        &:focus {
+            border-color: rgba(255, 255, 255, .8) !important;
+        }
+    }
+}
+
+[role=main] {
+
+    button,
+    .button,
+    input[type=submit] {
+        @include inline-block();
+        background: #ccc;
+        color: #333;
+        padding: .4em .8em;
+        border: 1px solid #888;
+        border-top-color: #999;
+        border-bottom-color: #777;
+        @include border-radius(3px);
+        @include text-shadow(rgba(255, 255, 255, .4) 0 1px 0);
+
+        &:hover,
+        &:focus {
+            background: #bbb;
+            color: #000;
+        }
+    }
 }
 
 /* SOCIAL LINKS ------------------------------------------------------------------ */
@@ -124,4 +155,11 @@ button,
 
 .flattr {
     border: 0;
+}
+
+/* FORMS ------------------------------------------------------------------------- */
+
+input,
+button {
+    vertical-align: middle;
 }
