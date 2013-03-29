@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
+<style>
+    body { margin:0; padding:0; }
+    #map { height: 300px; background: #eee; }
+
+    .d3-vec { position:absolute; }
+    path {
+        fill-opacity: 0;
+        stroke: #fff;
+        stroke-width: 5px;
+    }
+
+    .marker {
+        width: 48px;
+        height: 48px;
+        margin-left: -24px;
+        margin-top: -24px;
+        pointer-events: all;
+        position: absolute;
+        background: rgba(0, 0, 0, .15) url('/images/marker.png') center center no-repeat;
+        background-size: 12px 12px;
+        border-radius: 24px;
+    }
+</style>
+
+<div role="main">
+    <div id='map'></div>
+    <div class="content">
+
+        {{ content }}
+
+    </div>
+</div>
