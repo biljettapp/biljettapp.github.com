@@ -129,7 +129,7 @@ robots: noindex
     };
 
     var map = mapbox.map('map');
-    if(retina = window.devicePixelRatio >= 2) {
+    if(window.devicePixelRatio >= 2) {
         map.tileSize = { x: 128, y: 128 };
         map.addLayer(mapbox.layer().id('ptz0n.biljettapp-retina'));
     } else {
