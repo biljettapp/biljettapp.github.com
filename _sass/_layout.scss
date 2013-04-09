@@ -10,7 +10,8 @@ html {
 }
 
 .about {
-    background: #272727;
+    background: #333 url('../images/about.jpg');
+    @include background-size(cover);
     border-bottom: 1px solid #000;
     border-top: 1px solid #333;
     color: #ddd;
