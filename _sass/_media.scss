@@ -13,12 +13,24 @@ img {
 
     &.right {
         float: right;
-        margin: 0 -2em .5em 1em;
+        margin: 0 -2em .5em 2em;
     }
 
     &.center {
         display: block;
         margin: 0 auto;
         max-width: 70%;
+    }
+
+    &.app-icon {
+        max-width: 16%;
+
+        @include respond-to(tablet) {
+            max-width: 23%;
+        }
+
+        @include respond-to(mobile) {
+            max-width: 30%;
+        }
     }
 }

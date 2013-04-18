@@ -53,3 +53,17 @@ blockquote {
         color: #222;
     }
 }
+
+/* HEADINGS ---------------------------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+
+    @include respond-to(mobile) {
+
+        span {
+            display: none;
+        }
+    }
+}
