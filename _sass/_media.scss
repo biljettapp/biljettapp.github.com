@@ -24,9 +24,12 @@ img {
 
     &.app-icon {
         max-width: 16%;
+        margin-right: 1.5em;
+        margin-left: -1em;
 
         @include respond-to(tablet) {
             max-width: 23%;
+            margin-right: 1em;
         }
 
         @include respond-to(mobile) {
